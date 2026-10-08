@@ -1,0 +1,33 @@
+{
+  "name": "giia",
+  "version": "0.1.0",
+  "description": "Global Identity, Authority, Trust & Governance Infrastructure",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test 'dist/tests/**/*.test.js'",
+    "external-mvp": "node --test dist/tests/mvp/external-execution.test.js",
+    "check": "npm run build && npm test",
+    "dev": "node src/index.js",
+    "mvp": "npm run build && node dist/src/mvp/index.js",
+    "test:mvp": "npm run build && node --test 'dist/tests/mvp/**/*.test.js'",
+    "check:mvp": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "5.9.3"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "undici-types": "^7.18.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,43 @@
+src/core/result.ts:6:  | "EVALUATED"
+src/core/result.ts:7:  | "EXECUTED"
+src/resilience/service.ts:10:  ActionIntent,
+src/resilience/service.ts:11:  ActionRecord,
+src/resilience/service.ts:34:function isActionRecord(action: ActionIntent): action is ActionRecord {
+src/resilience/service.ts:36:    typeof (action as Partial<ActionRecord>).executedAt === "string" &&
+src/resilience/service.ts:37:    ((action as Partial<ActionRecord>).outcome === "SUCCESS" ||
+src/resilience/service.ts:38:      (action as Partial<ActionRecord>).outcome === "FAILURE")
+src/resilience/service.ts:107:    if (!isActionRecord(pipelineInput.action)) {
+src/resilience/authorization.ts:5:import type { ActionRecord } from "../trust-action/types.js";
+src/resilience/authorization.ts:39:  action: ActionRecord;
+src/resilience/authorization.ts:57:  action: ActionRecord,
+src/resilience/authorization.ts:140:  action: ActionRecord,
+src/resilience/authorization.ts:275:  if (receipt.audit.outcome !== "EXECUTED") {
+src/enforcement/external-boundary.ts:243:    executionAuthority: "NONE",
+src/enforcement/external-boundary.ts:244:    executionFunction: null,
+src/trust-action/types.ts:18:export interface ActionIntent {
+src/trust-action/types.ts:27:export interface ActionRecord extends ActionIntent {
+src/trust-action/types.ts:42:  action: ActionIntent;
+src/trust-action/types.ts:54:  action: ActionIntent | null;
+src/trust-action/pipeline-types.ts:21:import type { ActionIntent } from "./types.js";
+src/trust-action/pipeline-types.ts:221:  action: ActionIntent;
+src/trust-action/constitutional-gate.ts:5:import type { ActionIntent } from "../trust-action/types.js";
+src/trust-action/constitutional-gate.ts:11:  action: ActionIntent;
+src/action-gate/service.ts:79:    return block(input, "ACTION_ALREADY_EXECUTED");
+src/mvp/composition.ts:47:import type { ActionIntent } from "../trust-action/types.js";
+src/mvp/composition.ts:585:    outcome: "EVALUATED",
+src/mvp/composition.ts:895:        const action: ActionIntent = {
+src/mvp/composition.ts.bak.replay:25:import type { ActionIntent } from "../trust-action/types.js";
+src/mvp/composition.ts.bak.replay:285:    outcome: "EVALUATED",
+src/mvp/composition.ts.bak.replay:344:      const action: ActionIntent = {
+external-mvp/executor.ts:170:    reason: "EXTERNAL_ACTION_EXECUTED",
+tests/mvp/evaluation-boundary.test.ts:6:import type { ActionIntent, ActionRecord } from "../../src/trust-action/types.js";
+tests/mvp/evaluation-boundary.test.ts:8:test("MVP evaluation creates ActionIntent, not execution ActionRecord", () => {
+tests/mvp/evaluation-boundary.test.ts:21:    const action = result.action as ActionIntent;
+tests/mvp/evaluation-boundary.test.ts:43:test("MVP evaluation audit records EVALUATED, never EXECUTED", () => {
+tests/mvp/evaluation-boundary.test.ts:55:    assert.equal(result.audit.outcome, "EVALUATED");
+tests/mvp/evaluation-boundary.test.ts:56:    assert.notEqual(result.audit.outcome, "EXECUTED");
+tests/mvp/evaluation-boundary.test.ts:70:test("ActionRecord remains execution-only", () => {
+tests/mvp/evaluation-boundary.test.ts:71:  const intent: ActionIntent = {
+tests/mvp/evaluation-boundary.test.ts:80:  const record: ActionRecord = {
+tests/mvp/external-execution.test.ts:148:  assert.equal(result.reason, "EXTERNAL_ACTION_EXECUTED");
+tests/mvp/end-to-end-enforcement.test.ts:356:        "EXTERNAL_ACTION_EXECUTED",

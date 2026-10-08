@@ -1,0 +1,7 @@
+ℹ tests 477
+ℹ pass 477
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 20300.216232

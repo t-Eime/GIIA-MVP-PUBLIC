@@ -1,0 +1,605 @@
+
+> giia@0.1.0 test
+> node --test 'dist/tests/**/*.test.js'
+
+✔ standalone Governor assessment cannot enter the execution gate (28.211693ms)
+✔ standalone Guardian assessment cannot enter the execution gate (2.265616ms)
+✔ both organs plus all controls permit execution (2.336538ms)
+✔ Governor DENY blocks execution (2.368846ms)
+✔ Guardian DENY blocks execution (1.412307ms)
+✔ valid Governor credential cannot bypass failed institutional attestation (1.147076ms)
+✔ valid Guardian credential cannot bypass failed institutional attestation (1.169539ms)
+✔ unknown integrity never becomes execution permission (1.060923ms)
+✔ expired attestation cannot produce execution permission (6.973846ms)
+✔ Governor and Guardian cannot independently manufacture execution (13.439384ms)
+✔ critical trust-root compromise blocks even unanimous approval (3.211076ms)
+✔ known action is classified by governed rule (24.98ms)
+✔ unknown action does not receive a caller-controlled classification (1.450077ms)
+✔ empty action is rejected by classifier (4.784923ms)
+✔ harm risk is derived from governed action class (3.588077ms)
+✔ missing harm-risk rule fails closed to UNKNOWN (1.653ms)
+✔ valid attestation verifies institutional integrity (23.523692ms)
+✔ measurement mismatch fails closed (2.087ms)
+✔ revoked attestation fails closed (2.368923ms)
+✔ invalid signature fails closed (2.283077ms)
+✔ global constitutional rule allows compliant request (61.417539ms)
+✔ no applicable constitution produces DEFER (5.901ms)
+✔ prohibited action produces DENY (7.039615ms)
+✔ missing constitutional condition produces DEFER (3.351693ms)
+✔ satisfied constitutional condition allows (3.441231ms)
+✔ jurisdictional rule applies only to matching jurisdiction (6.708923ms)
+✔ global core remains jurisdiction-neutral (6.325154ms)
+✔ higher precedence rule wins deterministically (28.918769ms)
+✔ specific jurisdiction rule outranks equal-precedence global rule (13.237615ms)
+✔ equal precedence and specificity conflict produces DEFER (86.508385ms)
+✔ expired rule is not applicable (6.749538ms)
+✔ revoked rule is not applicable (6.013846ms)
+✔ unknown rule status is rejected (6.661538ms)
+✔ forged constitutional signature is rejected (20.1ms)
+✔ verified-rule allowlist can fail closed (10.780308ms)
+✔ constitutional registry persists rules and revocations (16.121846ms)
+✔ constitutional replay protection is one-time (7.375616ms)
+✔ unverified constitutional rule injection fails closed (9.743615ms)
+✔ revoked constitutional rule cannot authorize (5.332923ms)
+✔ issuer substitution invalidates constitutional signature (5.577616ms)
+✔ global immutable principles cannot be overridden by jurisdictional rule (4.734154ms)
+✔ constitutional conflict is action-specific (11.36ms)
+✔ ambiguous active constitutional rules fail closed (6.563462ms)
+✔ missing verification evidence fails closed even for otherwise valid rules (2.707ms)
+✔ registry retrieval exposes persisted revocation as revoked status (7.792923ms)
+✔ registry listRules enforces persisted revocation before constitutional evaluation (9.354385ms)
+✔ registry revocation remains enforced after reopening durable database (41.400615ms)
+✔ constitutional authority requires a valid GIIA trust chain (21.879385ms)
+✔ valid external enforcement authorization is permitted (64.699077ms)
+✔ GIIA ALLOW does not itself create execution authority (7.456615ms)
+✔ payload substitution is blocked (7.527461ms)
+✔ action substitution is blocked (16.578461ms)
+✔ decision expiration blocks enforcement (8.568923ms)
+✔ shutdown blocks enforcement (3.556231ms)
+✔ human approval requirement cannot be bypassed (3.450846ms)
+✔ passport identity substitution is blocked (7.706461ms)
+✔ revoked agent passport is blocked (7.830077ms)
+✔ external authorization binding cannot be changed without a new signature (5.157538ms)
+✔ FOAE does not accept caller-controlled trust decisions (224.644615ms)
+✔ missing artifact-origin evidence cannot produce VERIFIED (76.22677ms)
+✔ tampered artifact hash breaks origin verification (66.962385ms)
+✔ forged producer identity fails closed (75.064615ms)
+✔ current registry revocation prevents current origin verification (115.513539ms)
+✔ missing current trust state fails closed (94.150077ms)
+✔ producer authority holder mismatch fails closed (71.445231ms)
+✔ producer authority claim substitution fails closed (78.521461ms)
+✔ artifact id claim substitution fails closed (61.038154ms)
+✔ artifact hash claim substitution fails closed (52.674462ms)
+✔ artifact version claim substitution fails closed (53.594153ms)
+✔ artifact type claim substitution fails closed (58.51723ms)
+✔ verification at validity start is accepted (59.428923ms)
+✔ verification at validity end is expired (51.068539ms)
+✔ tampered verification result fails integrity verification (70.727077ms)
+✔ FOAE evidence binding rejects mismatched producer (72.51223ms)
+✔ trust-chain-backed governance key authorization verifies (114.732ms)
+✔ governance public-key substitution fails (34.117846ms)
+✔ governance key identity substitution fails (29.028308ms)
+✔ authorization signature tampering fails (28.852077ms)
+✔ authorization expiry fails closed (29.499385ms)
+✔ revoked delegation key cannot authorize governance decisions (35.170461ms)
+✔ substituted delegation key cannot authorize governance decisions (30.291769ms)
+✔ credential without governance authority cannot authorize key (27.763769ms)
+✔ non-governance key cannot receive governance authorization (39.562539ms)
+✔ trust-authorized governance key can sign an authoritative ALLOW (156.788308ms)
+✔ decision signature tampering is rejected (46.413847ms)
+✔ governance public-key substitution is rejected (40.521ms)
+✔ governance key identity substitution is rejected (37.72777ms)
+✔ governance authorization substitution is rejected (52.063077ms)
+✔ governance authorization mutation after signing is rejected (46.025846ms)
+✔ revoked governance key cannot verify a governance decision (33.777615ms)
+✔ revoked delegation key invalidates governance authorization (49.326385ms)
+✔ credential without governance authority cannot authorize signing (47.059769ms)
+✔ expired governance decision is rejected (39.735308ms)
+✔ expired governance authorization is rejected (36.636846ms)
+✔ raw private key material is not present in the signed governance decision (31.717154ms)
+✔ Governor allows a constitutionally valid action (21.314154ms)
+✔ Governor denies invalid authority (1.554077ms)
+✔ Governor never allows prohibited action (2.226692ms)
+✔ Governor defers when required evidence is insufficient (2.345846ms)
+✔ Guardian allows a safe action (24.107308ms)
+✔ Guardian contains integrity failure (1.087154ms)
+✔ Guardian denies unacceptable harm (1.071307ms)
+✔ Guardian defers unresolved anomaly (1.157ms)
+✔ valid signed passport verifies (58.118153ms)
+✔ passport signature tampering fails (5.422385ms)
+✔ revoked passport fails (2.353923ms)
+✔ expired passport fails (4.373307ms)
+✔ declared capability alone is not enough (5.612923ms)
+✔ capability requires both declaration and permission (4.751154ms)
+✔ trusted issuer plus valid agent signature passes (69.192924ms)
+✔ self-signed passport without issuer proof is denied (6.468615ms)
+✔ unknown issuer is denied (8.308308ms)
+✔ revoked issuer is denied (8.349231ms)
+✔ wrong issuer key is denied (7.444077ms)
+✔ passport modification after issuer signing is denied (9.298462ms)
+✔ issuer cannot silently substitute the agent public key (12.330153ms)
+✔ issuer validity window is enforced (7.964924ms)
+✔ capability requires both declaration and permission (9.836538ms)
+✔ registered active issuer is trusted (55.779923ms)
+✔ unknown issuer is not trusted (2.465462ms)
+✔ revoked issuer is not trusted (7.501462ms)
+✔ issuer outside validity window is not trusted (3.145923ms)
+✔ issuer state cannot silently change (7.045462ms)
+✔ same issuer can be registered idempotently (2.346769ms)
+✔ core integration allows governed in-scope request (27.682462ms)
+✔ governance prohibition denies before authorization (2.782693ms)
+✔ missing governance remains DEFER (4.336538ms)
+✔ subject mismatch is denied (2.276385ms)
+✔ authority mismatch is denied (2.911462ms)
+✔ revoked identity cannot authorize (1.976385ms)
+✔ expired authority cannot authorize (2.292693ms)
+✔ request outside authority scope is denied (3.069616ms)
+✔ CORE-001-AUTH-001 baseline independently governed request is authoritative (180.583615ms)
+✔ CORE-001-AUTH-002 substituted authorization request cannot obtain authoritative ALLOW (67.587077ms)
+✔ CORE-001-AUTH-003 substituted identity cannot obtain authoritative ALLOW (57.952077ms)
+✔ CORE-001-AUTH-004 substituted authority cannot obtain authoritative ALLOW (52.338154ms)
+✔ CORE-001-AUTH-005 substituted trust chain cannot obtain authoritative ALLOW (60.122462ms)
+✔ CORE-001-AUTH-006 substituted evidence cannot obtain authoritative ALLOW (67.791077ms)
+✔ CORE-001-AUTH-007 substituted audit cannot obtain authoritative ALLOW (60.707615ms)
+✔ CORE-001-AUTH-008 mixed authorization plus evidence cannot obtain authoritative ALLOW (61.411077ms)
+✔ CORE-001-AUTH-009 mixed trust plus authorization cannot obtain authoritative ALLOW (59.175307ms)
+✔ CORE-001-AUTH-010 full cross-request artifact assembly cannot obtain authoritative ALLOW (63.431461ms)
+✔ complete governed chain produces authoritative ALLOW (169.640385ms)
+✔ public trust-to-action boundary maps authoritative pipeline ALLOW (46.999769ms)
+✔ forged trust chain is denied before authorization (37.442231ms)
+✔ persisted trust-object substitution cannot alter authoritative decision (53.091923ms)
+✔ revoked credential is denied (35.288616ms)
+✔ authority trust credential mismatch is denied (37.244307ms)
+✔ credential bound to another authority is denied (37.22777ms)
+✔ credential subject mismatch is denied (35.97577ms)
+✔ governance prohibition denies the action (53.212923ms)
+✔ missing governance defers the action (45.797846ms)
+✔ constitutional prohibition denies the action (50.955077ms)
+✔ authorization subject mismatch denies the action (31.224923ms)
+✔ action binding mismatch denies the action record (51.406769ms)
+✔ tampered evidence is denied (51.633846ms)
+✔ tampered audit is denied (51.288077ms)
+✔ evidence for another subject is denied (48.485231ms)
+✔ audit for another actor is denied (42.149538ms)
+✔ evidence and audit commit is atomic on second-record failure (47.115154ms)
+✔ evidence and audit records are append-only at the SQLite boundary (94.890461ms)
+✔ governance jurisdiction mismatch cannot authoritatively ALLOW (49.261231ms)
+✔ unverified governance rule from another jurisdiction cannot poison a valid request (63.143923ms)
+✔ matching governance jurisdiction remains applicable (46.886461ms)
+✔ global governance rule remains jurisdiction-neutral (55.476077ms)
+✔ bootstrap keystore round-trips encrypted private keys (403.122231ms)
+✔ wrong bootstrap secret fails closed (367.649846ms)
+✔ keystore cannot be silently overwritten (349.663154ms)
+✔ missing keystore fails closed (2.406538ms)
+✔ short bootstrap secret is rejected (8.283692ms)
+RESTART FIRST RESULT {
+  decision: 'ALLOW',
+  reason: 'CONSTITUTIONAL_GATE_PASSED',
+  trust: {
+    valid: true,
+    reason: 'TRUST_CHAIN_VALID',
+    chain: [ 'mvp-root', 'mvp-anchor', 'mvp-delegation', 'mvp-credential' ]
+  },
+  governance: {
+    requestId: 'restart-key-1',
+    decision: 'ALLOW',
+    reason: 'GOVERNANCE_ALLOWED',
+    authoritative: false,
+    ruleIds: [ 'mvp-rule-allow-read' ],
+    governanceVersion: '1.0.0'
+  },
+  authorization: {
+    requestId: 'restart-key-1',
+    decision: 'ALLOW',
+    reason: 'AUTHORIZED',
+    authoritative: false
+  },
+  action: {
+    id: 'mvp-action-restart-key-1',
+    authorizationRequestId: 'restart-key-1',
+    actor: 'mvp-identity-001',
+    action: 'read',
+    resource: 'resource-001',
+    provenance: 'giia-mvp-api'
+  },
+  evidence: {
+    id: 'mvp-evidence-restart-key-1',
+    kind: 'event',
+    subject: 'mvp-identity-001',
+    authorizationRequestId: 'restart-key-1',
+    action: 'read',
+    occurredAt: '2026-01-01T00:00:00.000Z',
+    recordedAt: '2026-01-01T00:00:00.000Z',
+    source: 'giia-mvp-api',
+    contentHash: 'mvp-request-content',
+    provenance: 'giia-mvp-api',
+    recordHash: '9802cff54d56b5a537356f5b3251dc970ebb54b6193b5598027d8640c3dea2af'
+  },
+  audit: {
+    id: 'mvp-audit-restart-key-1',
+    actor: 'mvp-identity-001',
+    authorizationRequestId: 'restart-key-1',
+    evidenceId: 'mvp-evidence-restart-key-1',
+    action: 'read',
+    resource: 'resource-001',
+    outcome: 'EVALUATED',
+    occurredAt: '2026-01-01T00:00:00.000Z',
+    recordedAt: '2026-01-01T00:00:00.000Z',
+    reason: 'GIIA authoritative evaluation; no execution occurred',
+    provenance: 'giia-mvp-api',
+    recordHash: 'c5ff08b5e21123029002f4167d022c88fe4ca8323ff2fa6d18a970cd7ee67b23'
+  }
+}
+RESTART SECOND RESULT {
+  decision: 'ALLOW',
+  reason: 'CONSTITUTIONAL_GATE_PASSED',
+  trust: {
+    valid: true,
+    reason: 'TRUST_CHAIN_VALID',
+    chain: [ 'mvp-root', 'mvp-anchor', 'mvp-delegation', 'mvp-credential' ]
+  },
+  governance: {
+    requestId: 'restart-key-2',
+    decision: 'ALLOW',
+    reason: 'GOVERNANCE_ALLOWED',
+    authoritative: false,
+    ruleIds: [ 'mvp-rule-allow-read' ],
+    governanceVersion: '1.0.0'
+  },
+  authorization: {
+    requestId: 'restart-key-2',
+    decision: 'ALLOW',
+    reason: 'AUTHORIZED',
+    authoritative: false
+  },
+  action: {
+    id: 'mvp-action-restart-key-2',
+    authorizationRequestId: 'restart-key-2',
+    actor: 'mvp-identity-001',
+    action: 'read',
+    resource: 'resource-001',
+    provenance: 'giia-mvp-api'
+  },
+  evidence: {
+    id: 'mvp-evidence-restart-key-2',
+    kind: 'event',
+    subject: 'mvp-identity-001',
+    authorizationRequestId: 'restart-key-2',
+    action: 'read',
+    occurredAt: '2026-01-01T00:00:00.000Z',
+    recordedAt: '2026-01-01T00:00:00.000Z',
+    source: 'giia-mvp-api',
+    contentHash: 'mvp-request-content',
+    provenance: 'giia-mvp-api',
+    recordHash: 'f3aa75ea5376156ffe27fa8225a40f611933feba49a9de500f7beb91bf58af8d'
+  },
+  audit: {
+    id: 'mvp-audit-restart-key-2',
+    actor: 'mvp-identity-001',
+    authorizationRequestId: 'restart-key-2',
+    evidenceId: 'mvp-evidence-restart-key-2',
+    action: 'read',
+    resource: 'resource-001',
+    outcome: 'EVALUATED',
+    occurredAt: '2026-01-01T00:00:00.000Z',
+    recordedAt: '2026-01-01T00:00:00.000Z',
+    reason: 'GIIA authoritative evaluation; no execution occurred',
+    provenance: 'giia-mvp-api',
+    recordHash: '4eb5c9dcc172f41995419f5cf58f80a582ec3c77c9f8fafaa7174e89eba3f0a5'
+  }
+}
+✔ MVP-DURABLE-001 durable bootstrap creates keystore and trust registry (455.027077ms)
+✔ MVP-DURABLE-002 durable restart preserves the exact governance signing key (844.526077ms)
+✔ MVP-DURABLE-003 wrong durable bootstrap secret fails closed (518.561231ms)
+✔ MVP-DURABLE-004 partial durable bootstrap state fails closed (3.127924ms)
+✔ MVP-DURABLE-005 keystore private/public substitution fails closed (443.777231ms)
+✔ MVP-DURABLE-006 persisted trust-state substitution fails closed (1691.437ms)
+✔ P0-B: executor rejects substituted authority set (300.908ms)
+✔ P0-B: executor rejects substituted authority fingerprint (126.796385ms)
+✔ P0-B: executor rejects substituted authority member key (110.285462ms)
+✔ real signed GIIA decision reaches independent external executor (162.225924ms)
+✔ tampering with the signed GIIA decision blocks external enforcement (155.277ms)
+✔ tampering with the execution payload blocks external enforcement (113.056616ms)
+✔ binding the wrong executor passport blocks external enforcement (112.607385ms)
+✔ MVP evaluation creates ActionIntent, not execution ActionRecord (214.935384ms)
+✔ MVP evaluation audit records EVALUATED, never EXECUTED (71.260307ms)
+✔ ActionRecord remains execution-only (1.156307ms)
+✔ external executor executes only after independent GIIA verification (75.170384ms)
+✔ execution evidence is independently verifiable (31.712615ms)
+✔ tampering execution-evidence fields fails closed (22.405616ms)
+✔ tampering execution-evidence hash fails closed (13.532923ms)
+✔ tampered payload never executes (11.627769ms)
+✔ expired decision never executes (8.331615ms)
+✔ authorization substitution never executes (8.714692ms)
+✔ capability substitution never executes (9.660308ms)
+✔ external authorization executes exactly once (76.28123ms)
+✔ revoked decision blocks external enforcement (5.311154ms)
+✔ terminal shutdown blocks external enforcement (8.092ms)
+✔ required human approval blocks external enforcement (9.103384ms)
+✔ expired passport blocks external enforcement (7.392ms)
+✔ durable replay state survives executor-store restart (23.237461ms)
+✔ durable replay permits exactly one concurrent cross-process consume (5325.237231ms)
+✔ durable replay fails closed when a stale lock exists (7.19477ms)
+✔ MVP health endpoint is available (1449.439077ms)
+✔ MVP evaluate returns authoritative non-execution decision (360.419693ms)
+✔ MVP rejects caller-controlled security facts (119.29723ms)
+✔ MVP rejects caller-controlled execution authority (96.101539ms)
+✔ MVP rejects malformed JSON (105.169539ms)
+✔ MVP has no execution endpoint (93.698538ms)
+✔ MVP replay protection rejects the same request ID twice (941.45877ms)
+✔ MVP replay protection survives composition restart (543.355077ms)
+✔ evaluate schema rejects missing request id (171.226384ms)
+✔ evaluate schema rejects empty action (1.388616ms)
+✔ evaluate schema rejects future timestamps (1.479692ms)
+✔ evaluate schema rejects stale timestamps (59.941308ms)
+✔ decision validation rejects execution authority (18.321616ms)
+✔ MVP decision independently verifies (890.226153ms)
+✔ tampered decision is independently rejected (301.560077ms)
+✔ execution authority cannot be forged into a valid record (231.229846ms)
+✔ P0-A: authoritative decision contains a valid 3-of-5 governance certificate (392.024538ms)
+✔ P0-A: one authority member cannot authorize an authoritative decision (200.146846ms)
+✔ P0-A: two authority members cannot authorize an authoritative decision (97.480308ms)
+✔ P0-A: duplicate authority signer is rejected (98.310692ms)
+✔ P0-A: revoked authority signer is rejected (113.275923ms)
+✔ P0-A: quarantined authority signer is rejected (82.38177ms)
+✔ P0-A: expired authority signer is rejected (75.676308ms)
+✔ P0-A: certificate mutation is rejected (113.814077ms)
+✔ P0-A: removing the governance certificate is rejected (69.798385ms)
+✔ P0-A: decision mutation remains rejected despite a valid certificate (85.555384ms)
+✔ P0-A: wrong governance authority set is rejected (80.940077ms)
+✔ P0-A: legacy single-key signature without the authority certificate is insufficient (64.521846ms)
+✔ real pipeline ALLOW produces Governor and Guardian ALLOW (189.94423ms)
+✔ real pipeline DENY cannot become Governor ALLOW (47.591ms)
+✔ real pipeline trust failure cannot become Guardian ALLOW (40.561846ms)
+✔ real pipeline jurisdiction failure cannot become an organ ALLOW (44.554846ms)
+✔ pipeline ALLOW does not create execution authority (55.018385ms)
+✔ projection preserves exact request binding (42.593231ms)
+✔ projection preserves authoritative pipeline provenance (70.727693ms)
+✔ successful organ assessment cannot remove enforcement boundary (63.552923ms)
+✔ organ assessment preserves the original pipeline timestamp (180.566846ms)
+✔ future-dated organ assessment is rejected (63.321231ms)
+✔ organ assessment cannot be replayed with a different assessment timestamp (38.736615ms)
+✔ organ assessment preserves exact request identity (166.142385ms)
+✔ organ results cannot be rebound to another request (67.511ms)
+✔ Governor and Guardian cannot silently disagree on the authoritative pipeline decision (48.744077ms)
+✔ organ assessment never changes execution permission (50.893307ms)
+✔ organ results preserve pipeline provenance (57.841231ms)
+✔ organ assessment may occur after the original request timestamp (50.233539ms)
+✔ organ assessment is bound to the original request timestamp (187.378385ms)
+✔ reusing an organ assessment cannot change the governed request (63.384ms)
+✔ organ assessment cannot manufacture execution permission through replay (45.009231ms)
+✔ organ assessment remains bound to the original actor (44.851692ms)
+✔ organ assessment remains bound to the original action and target (57.716ms)
+✔ offline evidence hash is required before persistence (93.543307ms)
+✔ offline evidence chain rejects gaps and forged hashes (5.221539ms)
+✔ reconciliation rejects forged evidence before comparing hashes (5.280616ms)
+✔ reconciliation does not silently resolve conflicting evidence (4.775384ms)
+✔ state transition hash detects payload tampering (2.924924ms)
+✔ transition chain rejects forged persisted transition payload (2.268ms)
+✔ restart verification is cryptographically bound (2.003384ms)
+✔ restart authorization requires two distinct verification references (5.733308ms)
+✔ restart authorization hash detects tampering (6.498077ms)
+✔ restart registry is append-only at the SQL boundary (56.233538ms)
+✔ resilience registry append-only tables reject UPDATE and DELETE (60.612615ms)
+✔ receipt constructor is not publicly exported (5.233538ms)
+✔ registry does not expose the raw transition commit method (1.816307ms)
+✔ legacy authority-only resilience transition is fail-closed (19.037923ms)
+✔ valid evidence chain verifies (28.817539ms)
+✔ tampered evidence record is detected (4.800923ms)
+✔ tampered evidence record hash is detected (6.217ms)
+✔ incorrect evidence previous hash is detected (3.048077ms)
+✔ valid audit chain verifies (5.552ms)
+✔ tampered audit record is detected (1.434847ms)
+✔ tampered audit record hash is detected (1.507307ms)
+✔ incorrect audit previous hash is detected (1.614077ms)
+✔ 3-of-5 governance authority accepts exactly three valid members (84.817616ms)
+✔ one compromised member cannot create a quorum (9.156615ms)
+✔ two compromised members cannot create a quorum (11.605308ms)
+✔ four or five valid members satisfy the quorum (42.528308ms)
+✔ duplicate signer cannot count twice (11.819384ms)
+✔ revoked member cannot satisfy the quorum (9.380616ms)
+✔ decision mutation invalidates the certificate (17.361539ms)
+✔ wrong authority set is rejected (22.736ms)
+✔ caller cannot substitute a member public key (15.151385ms)
+✔ tampered signature fails closed (21.27323ms)
+✔ manually forged signature from an unregistered key is rejected (15.009923ms)
+✔ 3-of-5 governance quorum permits exactly three valid members (89.211692ms)
+✔ 2-of-5 governance quorum fails closed (30.402462ms)
+✔ four or five valid members still satisfy the quorum (29.021538ms)
+✔ duplicate signer is rejected (13.632077ms)
+✔ decision mutation invalidates the quorum (10.355616ms)
+✔ unauthorized signer is rejected (22.296847ms)
+✔ revoked signer cannot satisfy quorum (9.871692ms)
+✔ production governance signer fails closed when secure provider is unavailable (44.458384ms)
+✔ production provider does not silently fall back to software signing (9.771615ms)
+✔ development signer is explicitly marked non-production (11.653461ms)
+✔ empty development signing payload is rejected (3.067ms)
+✔ governance signing payload digest is deterministic (4.757538ms)
+✔ key boundary registers active private material in memory (73.382846ms)
+✔ key boundary signs only with the registered key purpose (19.751385ms)
+✔ wrong key purpose is rejected (9.575ms)
+✔ unknown key cannot sign (2.256538ms)
+✔ revoked key cannot sign (8.750154ms)
+✔ quarantined key cannot sign (5.01477ms)
+✔ expired key cannot sign (4.981538ms)
+✔ key lifecycle is auditable (13.876538ms)
+✔ private/public key substitution is rejected (5.779154ms)
+✔ duplicate key registration is rejected (11.458769ms)
+✔ security event hash verifies (28.199308ms)
+✔ security event chain verifies (3.659077ms)
+✔ tampered security event is detected (3.051385ms)
+✔ forged previous security event hash is detected (3.795615ms)
+✔ replay protection is durable (40.982769ms)
+✔ security detection is persisted and chained (11.344231ms)
+✔ quarantine changes subject state (4.118692ms)
+✔ containment changes subject state (3.804923ms)
+✔ release requires quarantine or containment (11.480308ms)
+✔ contained subject can be released (9.568616ms)
+✔ security event records are append-only (7.229615ms)
+✔ replay attempt creates security evidence (4.000616ms)
+✔ P0-E independent verifier rejects wrong key binding (47.473307ms)
+✔ P0-E independent verifier rejects authority substitution (2.245231ms)
+✔ P0-E independent verifier rejects algorithm substitution (5.603308ms)
+✔ P0-E independent verifier rejects signature mutation (14.063693ms)
+✔ P0-E independent verifier rejects invalid trust anchor (4.518769ms)
+✔ P0-E independent verifier does not trust provider metadata alone (3.085923ms)
+✔ P0-E production trust anchor is exactly 3-of-5 (20.747077ms)
+✔ P0-E incomplete ceremony fails closed (3.873231ms)
+✔ P0-E ceremony must contain exactly five participants (2.535077ms)
+✔ P0-E production boundary refuses missing provider (3.526538ms)
+✔ P0-E request cannot substitute authority fingerprint (7.061231ms)
+✔ P0-E request cannot substitute production key (2.767077ms)
+✔ P0-E valid provider remains behind production boundary (3.593539ms)
+✔ P0-E threshold configuration is exactly 3-of-5 (25.239077ms)
+✔ P0-E production threshold signer fails closed without HSM provider (6.472616ms)
+✔ P0-E development/non-threshold signer cannot enter production (2.455461ms)
+✔ P0-E wrong production algorithm is rejected (2.784384ms)
+✔ P0-E provider result must bind to requested key (5.72823ms)
+✔ P0-E provider result must bind to pinned authority fingerprint (3.216615ms)
+✔ P0-E provider result must contain a genuine threshold signature (3.285769ms)
+✔ P0-E valid production provider is accepted (2.145154ms)
+✔ missing evidence fails closed and isolates subject (36.852ms)
+✔ previously trusted subject with missing evidence is quarantined (2.41877ms)
+✔ caller cannot grant trust by supplying legacy boolean checks (4.662538ms)
+✔ verification evidence cannot establish unrelated trust checks (116.972846ms)
+✔ forged verification evidence is rejected (67.940692ms)
+✔ verification evidence bound to another subject is rejected (40.318462ms)
+✔ repair or restart does not itself create trust (2.799615ms)
+✔ lower-level ALLOW cannot be treated as an authoritative consequential decision (24.336615ms)
+✔ valid trust chain verifies (103.753ms)
+✔ secure signing boundary constructs and verifies complete trust chain (38.416924ms)
+✔ secure signer purpose mismatch is rejected (12.077538ms)
+✔ forged anchor signature is rejected (19.206461ms)
+✔ anchor root substitution is rejected (17.044308ms)
+✔ wrong root public key rejects anchor (28.880923ms)
+✔ anchor signing-key substitution inside signed anchor is rejected (19.917231ms)
+✔ delegation signature forgery is rejected (23.868077ms)
+✔ delegation issuer substitution is rejected (36.166154ms)
+✔ delegation signing-key substitution inside signed delegation is rejected (21.747462ms)
+✔ credential signature forgery is rejected (24.468846ms)
+✔ credential issuer substitution is rejected (27.350077ms)
+✔ expired anchor is rejected (13.091077ms)
+✔ revoked key is rejected (16.124615ms)
+✔ key rotation expires old key (3.293616ms)
+✔ durable trust registry stores and retrieves trust objects (30.908307ms)
+✔ trust revocation is durable (3.531385ms)
+✔ trust replay protection consumes request only once (3.674077ms)
+✔ revoked secure signer is rejected (9.162769ms)
+✔ quarantined secure signer is rejected (7.097616ms)
+✔ expired secure signer is rejected (4.177153ms)
+✔ secure signer cannot use an unregistered key ID (6.842846ms)
+✔ secure signer cannot use a registered key with the wrong purpose (7.125615ms)
+✔ authenticated verifier requires a valid identity/trust-chain binding (104.132538ms)
+✔ fake verifier identity is rejected (28.341231ms)
+✔ verifier authority must belong to authenticated identity (27.741538ms)
+✔ verifier authorization must belong to the authenticated identity (23.489231ms)
+✔ verifier must actually be authorized for VERIFY (38.119ms)
+✔ substituted authority contents are rejected (26.118461ms)
+✔ forged verifier credential claims are rejected (28.520385ms)
+✔ altered authenticated verifier evidence is rejected (21.180692ms)
+✔ replayed verifier authentication at another time is rejected (22.491308ms)
+✔ authenticated verification binds the verifier identity (79.251693ms)
+✔ wrong verification subject is rejected (48.904ms)
+✔ forged verifier authentication evidence cannot create verification evidence (40.350538ms)
+✔ tampered verification evidence is rejected (43.729769ms)
+✔ tampered trust result is rejected (52.888ms)
+✔ verification cannot be replayed at another verification time (44.038154ms)
+✔ verification evidence cannot be accepted with an empty verifier chain (42.091692ms)
+✔ verification evidence without verifier chain input fails closed (41.586385ms)
+✔ verification evidence without subject chain input fails closed (37.612923ms)
+✔ tampered verifier trust-chain input is rejected (40.085ms)
+✔ tampered subject trust-chain input is rejected (37.36ms)
+✔ complete authenticated verification evidence remains valid (42.915693ms)
+✔ agent trust boundary exists and fails closed on invalid trust (73.626385ms)
+✔ agent substitution is blocked (2.661539ms)
+✔ issuer substitution is blocked (2.713846ms)
+✔ capability escalation is blocked (6.700615ms)
+✔ expired passport is blocked (6.254076ms)
+✔ revoked passport is blocked (5.864693ms)
+✔ operator substitution is blocked (3.743ms)
+✔ owner substitution is blocked (2.344307ms)
+✔ declared capability alone cannot create permission (14.146231ms)
+✔ valid human-approved constitutional amendment is accepted (209.737846ms)
+✔ P0-D: human approval alone is insufficient without governance quorum (61.810846ms)
+✔ P0-D: governance quorum alone is insufficient without valid human approval (61.139692ms)
+✔ P0-D: two-of-five governance quorum is insufficient (48.334231ms)
+✔ P0-D: wrong governance authority set is denied (65.519307ms)
+✔ P0-D: amendment tampering after governance quorum is denied (62.163385ms)
+✔ P0-D: amendment tampering after human approval is denied (55.054769ms)
+✔ P0-D: revoked governance signer is denied (50.290693ms)
+✔ P0-D: quarantined governance signer is denied (59.776615ms)
+✔ P0-D: expired governance signer is denied (83.362461ms)
+✔ P0-D: governance certificate mutation is denied (70.928077ms)
+✔ P0-D: governance authority set mutation after quorum is denied (70.924538ms)
+✔ P0-D: only exact human approval plus exact governance quorum can approve (89.142462ms)
+✔ constitutional amendment without valid approval is denied (58.557616ms)
+✔ constitutional downgrade cannot be approved by a valid signature (104.825538ms)
+✔ amendment proposal tampering invalidates human approval (60.971616ms)
+✔ amendment replay is denied (89.322693ms)
+✔ amendment evidence is append-only and chained (150.147384ms)
+✔ human approval binds approver and authority metadata cryptographically (46.235923ms)
+✔ AI identity cannot approve a constitutional amendment (37.024077ms)
+✔ wrong human identity cannot approve a constitutional amendment (35.596923ms)
+✔ authority held by another identity cannot approve amendment (39.598077ms)
+✔ revoked human identity cannot approve amendment (44.627385ms)
+✔ expired amendment authority cannot approve amendment (36.561231ms)
+✔ authority without amendment scope cannot approve amendment (711.473615ms)
+✔ amendment validation is read-only and does not emit signing lifecycle events (58.761769ms)
+✔ AI identity with valid human approval key is denied (41.843307ms)
+✔ Human A with Human B approval key is denied (46.043693ms)
+✔ unregistered approval key is denied (46.161846ms)
+✔ revoked approval key is denied (43.270461ms)
+✔ quarantined approval key is denied (44.272615ms)
+✔ expired approval key is denied (46.524077ms)
+✔ wrong-purpose approval key is denied (46.935077ms)
+✔ substituted credential is denied (41.600923ms)
+✔ substituted authority is denied (49.444616ms)
+✔ constitutional invariant registry is populated (19.924846ms)
+✔ every invariant has a stable id and active version (4.808692ms)
+✔ protected constitutional core invariants cannot be marked tenant-only (3.732231ms)
+✔ tenant-scoped invariants remain explicitly non-core (14.546077ms)
+✔ critical protected invariants fail closed or deny (11.240615ms)
+✔ required constitutional prohibition registry is present (2.633615ms)
+✔ constitutional human amendment boundary is registered (6.246461ms)
+✔ capability is explicitly separated from authorization (5.016308ms)
+✔ evidence-before-action invariants are registered (2.836308ms)
+✔ enforcement boundary cannot convert review or uncertainty into ALLOW (4.385769ms)
+✔ historical integrity invariants are protected (0.925462ms)
+✔ unknown invariant lookup does not silently succeed (3.21823ms)
+✔ registry listing is stable and read-only at the API boundary (2.470846ms)
+✔ canonical serialization is independent of object key order (22.419385ms)
+✔ SHA-256 is deterministic (2.057924ms)
+✔ constant-time comparison handles equal and unequal values (1.474153ms)
+✔ unchanged constitutional registry passes non-regression (38.148307ms)
+✔ protected invariant removal is denied (15.826769ms)
+✔ protected invariant cannot become unprotected (3.369307ms)
+✔ protected core cannot be moved to a weaker scope (3.429231ms)
+✔ protected fail-closed behavior cannot become permissive (7.016924ms)
+✔ required evidence cannot be removed (7.433923ms)
+✔ stronger controls remain allowed (2.983154ms)
+✔ assertion fails closed on constitutional downgrade (10.437ms)
+✔ unknown new invariants do not weaken existing protected invariants (2.332923ms)
+✔ duplicate invariant IDs are rejected (3.152924ms)
+✔ empty invariant IDs are rejected (24.099923ms)
+✔ invalid invariant lifecycle status is rejected (7.102538ms)
+✔ protected invariant severity cannot be weakened (15.335923ms)
+✔ constitutional invariant statement changes require review (4.279077ms)
+✔ constitutional invariant family changes require review (3.993846ms)
+✔ constitutional enforcement-point changes require review (6.248ms)
+✔ constitutional test coverage cannot be removed (5.473615ms)
+✔ stronger severity remains allowed (4.592ms)
+✔ additional constitutional test coverage remains allowed (4.572923ms)
+✔ identity rejects invalid timestamp (28.873769ms)
+✔ authority rejects empty trust credential (2.843461ms)
+✔ authority rejects empty scope entry (2.336308ms)
+✔ authority rejects invalid expiry (2.594692ms)
+✔ governance rejects invalid effective window (3.277462ms)
+✔ governance tie ordering is deterministic (50.853847ms)
+ℹ tests 477
+ℹ suites 0
+ℹ pass 477
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 20300.216232

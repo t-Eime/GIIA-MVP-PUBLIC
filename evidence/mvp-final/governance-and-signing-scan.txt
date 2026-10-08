@@ -1,0 +1,54 @@
+src/security/governance-quorum.ts:11:export const GOVERNANCE_QUORUM = 3 as const;
+src/security/governance-quorum.ts:12:export const GOVERNANCE_MEMBER_COUNT = 5 as const;
+src/security/governance-quorum.ts:33:  readonly algorithm: "Ed25519-QUORUM-3-OF-5";
+src/security/governance-quorum.ts:107:  if (members.length !== GOVERNANCE_MEMBER_COUNT) {
+src/security/governance-quorum.ts:108:    throw new Error("GOVERNANCE_QUORUM_REQUIRES_EXACTLY_FIVE_MEMBERS");
+src/security/governance-quorum.ts:112:    .slice(0, GOVERNANCE_QUORUM)
+src/security/governance-quorum.ts:118:    algorithm: "Ed25519-QUORUM-3-OF-5" as const,
+src/security/governance-quorum.ts:119:    quorum: GOVERNANCE_QUORUM,
+src/security/governance-quorum.ts:120:    memberCount: GOVERNANCE_MEMBER_COUNT,
+src/security/governance-quorum.ts:134:    certificate.algorithm !== "Ed25519-QUORUM-3-OF-5" ||
+src/security/governance-quorum.ts:135:    certificate.quorum !== GOVERNANCE_QUORUM ||
+src/security/governance-quorum.ts:136:    certificate.memberCount !== GOVERNANCE_MEMBER_COUNT
+src/security/governance-quorum.ts:140:      reason: "GOVERNANCE_QUORUM_PARAMETERS_INVALID",
+src/security/governance-quorum.ts:148:      reason: "GOVERNANCE_QUORUM_DECISION_DIGEST_MISMATCH",
+src/security/governance-quorum.ts:153:  if (members.length !== GOVERNANCE_MEMBER_COUNT) {
+src/security/governance-quorum.ts:156:      reason: "GOVERNANCE_QUORUM_MEMBER_SET_INVALID",
+src/security/governance-quorum.ts:171:        reason: "GOVERNANCE_QUORUM_DUPLICATE_SIGNER",
+src/security/governance-quorum.ts:183:        reason: "GOVERNANCE_QUORUM_SIGNER_NOT_REGISTERED",
+src/security/governance-quorum.ts:191:        reason: "GOVERNANCE_QUORUM_SIGNER_PURPOSE_INVALID",
+src/security/governance-quorum.ts:199:        reason: "GOVERNANCE_QUORUM_SIGNER_NOT_ACTIVE",
+src/security/governance-quorum.ts:211:        reason: "GOVERNANCE_QUORUM_PUBLIC_KEY_INVALID",
+src/security/governance-quorum.ts:226:        reason: "GOVERNANCE_QUORUM_SIGNATURE_INVALID",
+src/security/governance-quorum.ts:232:  if (seen.size < GOVERNANCE_QUORUM) {
+src/security/governance-quorum.ts:235:      reason: "GOVERNANCE_QUORUM_THRESHOLD_NOT_MET",
+src/security/governance-quorum.ts:242:    reason: "GOVERNANCE_QUORUM_VERIFIED",
+src/security/governance-authority.ts:42:  readonly algorithm: "ED25519-MULTISIG-3-OF-5";
+src/security/governance-authority.ts:250:    algorithm: "ED25519-MULTISIG-3-OF-5" as const,
+src/security/governance-authority.ts:269:    "ED25519-MULTISIG-3-OF-5"
+src/security/governance-signing-provider.ts:47: * Existing Ed25519 3-of-5 governance multisig remains available to the
+src/security/threshold-signing.ts:13:  "THRESHOLD-3-OF-5-HSM" as const;
+src/security/threshold-production.ts:5: * A genuine 3-of-5 MPC/HSM provider MUST be injected.
+tests/security/governance-quorum.test.ts:33:test("3-of-5 governance quorum permits exactly three valid members", () => {
+tests/security/governance-quorum.test.ts:72:    "GOVERNANCE_QUORUM_THRESHOLD_NOT_MET",
+tests/security/governance-quorum.test.ts:84:    algorithm: "Ed25519-QUORUM-3-OF-5" as const,
+tests/security/governance-quorum.test.ts:109:    algorithm: "Ed25519-QUORUM-3-OF-5" as const,
+tests/security/governance-quorum.test.ts:125:    "GOVERNANCE_QUORUM_DUPLICATE_SIGNER",
+tests/security/governance-quorum.test.ts:151:    "GOVERNANCE_QUORUM_DECISION_DIGEST_MISMATCH",
+tests/security/governance-quorum.test.ts:170:    algorithm: "Ed25519-QUORUM-3-OF-5" as const,
+tests/security/governance-quorum.test.ts:186:    "GOVERNANCE_QUORUM_SIGNER_NOT_REGISTERED",
+tests/security/governance-quorum.test.ts:216:    "GOVERNANCE_QUORUM_SIGNER_NOT_ACTIVE",
+tests/security/governance-authority.test.ts:41:test("3-of-5 governance authority accepts exactly three valid members", () => {
+tests/security/governance-authority.test.ts:319:    algorithm: "ED25519-MULTISIG-3-OF-5" as const,
+tests/security/threshold-signing.test.ts:13:test("P0-E threshold configuration is exactly 3-of-5", () => {
+tests/security/threshold-signing.test.ts:16:  assert.equal(PRODUCTION_THRESHOLD_ALGORITHM, "THRESHOLD-3-OF-5-HSM");
+tests/security/threshold-signing.test.ts:39:    algorithm: "ED25519-MULTISIG-3-OF-5",
+tests/security/threshold-production.test.ts:47:test("P0-E production trust anchor is exactly 3-of-5", () => {
+tests/security/threshold-independent-verifier.test.ts:115:      algorithm: "ED25519-MULTISIG-3-OF-5" as never,
+
+src/security/governance-signing-provider.ts:4:  | "PRODUCTION_HARDWARE_THRESHOLD"
+src/security/governance-signing-provider.ts:5:  | "DEVELOPMENT_SOFTWARE_MULTISIG";
+src/security/governance-signing-provider.ts:34:    mode: "PRODUCTION_HARDWARE_THRESHOLD",
+src/security/governance-signing-provider.ts:55:    mode: "DEVELOPMENT_SOFTWARE_MULTISIG",
+tests/security/governance-signing-provider.test.ts:15:  assert.equal(provider.mode, "PRODUCTION_HARDWARE_THRESHOLD");
+tests/security/governance-signing-provider.test.ts:42:  assert.equal(provider.mode, "DEVELOPMENT_SOFTWARE_MULTISIG");
